@@ -11,7 +11,9 @@ public class ConstantMessages {
 	public static final String MandatoryParamsMissing = "Mandatory Parameters Missing";
 	public static final String creationMessage = "New User has been created successfully";
 	public static final String registerFailureMessage = "Error while creating user";
-	
+	public static final String noUser = "No user with given Id";
+	public static final String foundUser = "Found user with given ID";
+	public static final String updatedUserInfo = "User information has been updated";
 	
 	//Status Codes
 	public static final String successCode="B200";

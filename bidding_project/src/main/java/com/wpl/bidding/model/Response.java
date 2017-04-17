@@ -14,6 +14,9 @@ public class Response {
 		this.responseMessage = responseMessage;
 		this.responseCode = responseCode;
 	}
+	public Response() {
+		// TODO Auto-generated constructor stub
+	}
 	public String responseMessage;
 	public String responseCode;
 	public String getResponseMessage() {

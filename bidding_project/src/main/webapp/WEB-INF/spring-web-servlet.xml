@@ -60,6 +60,9 @@
 	<bean id="loginServiceImpl" class="com.wpl.bidding.service.LoginServiceImpl">
 	</bean>
 	<bean id="loginDaoImpl" class="com.wpl.bidding.dao.LoginDaoImpl"></bean>
+		<bean id="userService" class="com.wpl.bidding.service.UserServiceImpl">
+	</bean>
+	<bean id="userDao" class="com.wpl.bidding.dao.UserDaoImpl"></bean>
 	<bean id="UserModel" class="com.wpl.bidding.model.UserModel"></bean>
 
 	<mvc:resources mapping="/resources/**" location="/resources/" />

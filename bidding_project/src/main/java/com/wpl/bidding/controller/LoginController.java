@@ -15,6 +15,7 @@ import com.wpl.bidding.model.Response;
 import com.wpl.bidding.model.UserModel;
 import com.wpl.bidding.persist.User;
 import com.wpl.bidding.service.LoginServiceImpl;
+import com.wpl.bidding.utils.EncryptionUtils;
 
 @Controller
 public class LoginController {
