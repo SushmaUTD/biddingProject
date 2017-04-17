@@ -13,6 +13,7 @@ public class ConstantMessages {
 	public static final String serverErrorCode="B500";
 	public static final String mandatoryParameterMissingCode = "B400";
 	public static final String emptyResponseCode ="B501";
+	public static final String wrongUserNameOrPassword = "Wrong UserName or Password";
 
 }
 
