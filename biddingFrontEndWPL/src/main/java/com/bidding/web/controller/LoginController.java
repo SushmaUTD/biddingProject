@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -35,7 +34,6 @@ public class LoginController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(HttpServletRequest request,ModelMap model) {
-
 		UserModel customer = new UserModel();
 		Login userDetails = new Login();
 		userDetails.setUsername(request.getParameter("userName"));
@@ -50,7 +48,6 @@ public class LoginController {
 			
 			  	RestTemplate restTemplate = new RestTemplate();
 			    customer = restTemplate.postForObject(Route.basePath+Route.loginUrl,userDetails, UserModel.class);
-
 		if(customer.getResponse().getResponseCode().equalsIgnoreCase(ConstantMessages.successCode))
 		{
 			HttpSession session = request.getSession();
