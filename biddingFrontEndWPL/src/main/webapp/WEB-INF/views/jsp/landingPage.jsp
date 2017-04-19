@@ -51,7 +51,7 @@
                 <br>
                <a class="navbar-brand page-scroll" href="#page-top" style="margin-left:30px">Start Bootstrap</a>
             </div>
-            <form id="one" action="http://localhost:8080/frontend/login" method="POST">
+            <form id="one" action="http://localhost:8080/bidding/login" method="POST">
             &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <div style="float:right;margin-right=0px">
             <input type="text" name="userName" placeholder="Enter Username" required="" > &nbsp
             <input type="password"  name="password" placeholder="Password" required=""autocomplete="off"> &nbsp &nbsp 
@@ -59,7 +59,7 @@
             
             <br>
             <p class="forgot"><a href="#">Forgot Password?</a>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-            <a href="//localhost:8080/biddingFrontEnd/register.jsp">New User?</a>
+            <a href="//localhost:8080/bidding/register.jsp">New User?</a>
             </p>
           </div>
           </form>
