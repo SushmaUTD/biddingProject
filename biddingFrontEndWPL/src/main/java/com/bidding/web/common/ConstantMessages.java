@@ -14,6 +14,7 @@ public class ConstantMessages {
 	public static final String mandatoryParameterMissingCode = "B400";
 	public static final String emptyResponseCode ="B501";
 	public static final String wrongUserNameOrPassword = "Wrong UserName or Password";
-
+	public static final String serverError = "Technical Issue!! Please try later";
+	public static final String mandatoryParamsMissing = "Mandatory Parameters Missing";
 }
 

@@ -8,6 +8,6 @@
 </head>
 <body>
 <p>${errorMessage}</p>
-<%@ include file="landingPage.jsp" %>
+<%@ include file="register.jsp" %>
 </body>
 </html>
