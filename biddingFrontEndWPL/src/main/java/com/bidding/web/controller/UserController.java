@@ -28,7 +28,7 @@ import com.bidding.web.model.UserModel;
 public class UserController {
 	
 	@RequestMapping(value = "/getUserProfile", method = RequestMethod.GET)
-	public String login(@RequestParam("userId") int userId ,HttpServletRequest request,ModelMap model) {
+	public String getUserProfile(@RequestParam("userId") int userId ,HttpServletRequest request,ModelMap model) {
 		UserModel customer = new UserModel();
 		if(userId==0)
 		{
@@ -58,7 +58,7 @@ public class UserController {
 	
 	
 	@RequestMapping(value = "/editUserProfile", method = RequestMethod.GET)
-	public String login(HttpServletRequest request,ModelMap model) {
+	public String editUserProfile(HttpServletRequest request,ModelMap model) {
 		UserModel customer = new UserModel();
 		//Get values from the form for registering a new user
 		User userDetails = new User();
