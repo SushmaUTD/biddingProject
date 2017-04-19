@@ -58,7 +58,8 @@
             <input type="submit" value="Log In"></input>
             
             <br>
-            <p class="forgot"><a href="#">Forgot Password?</a>&nbsp &nbsp &nbsp &nbsp 
+            <p class="forgot"><a href="#">Forgot Password?</a>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            <a href="//localhost:8080/biddingFrontEnd/register.jsp">New User?</a>
             </p>
           </div>
           </form>
