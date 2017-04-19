@@ -44,7 +44,7 @@ public class LoginController {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", customer.getUserDetails());
 			model.addAttribute("name", customer.getUserDetails().getFirstName()+" "+customer.getUserDetails().getLastName());
-			return "homepage";
+			return "homePage";
 		}
 		else
 		{
