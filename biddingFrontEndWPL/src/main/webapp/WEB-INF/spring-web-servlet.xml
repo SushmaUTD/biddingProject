@@ -23,6 +23,7 @@
 	</bean>
 
 	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/jsp/**" location="/WEB-INF/views/jsp/" />
  
 	<mvc:annotation-driven />
 	
