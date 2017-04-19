@@ -38,16 +38,8 @@ public class UserController {
 			return userModel;
 		}
 		else {
-			user = userService.getUserInfo(userId);
-			if (user == null)
-			{
-				userModel.setResponse(new Response(ConstantMessages.noUser,ConstantMessages.emptyResponseCode));
-			}
-			else
-			{
-				userModel.setResponse(new Response(ConstantMessages.foundUser,ConstantMessages.successCode));	
-			}
-		userModel.setUserDetails(user);	
+			userModel = userService.getUserInfo(userId);
+			
 		}
 		return userModel;
 	}
@@ -63,18 +55,8 @@ public class UserController {
 			return response;
 		}
 		else {
-			result = userService.updateUserInfo(userInfo);
-			if (result == 0)
-			{
-				response.setResponseCode(ConstantMessages.emptyResponseCode);
-				response.setResponseMessage(ConstantMessages.noUser);
+			response = userService.updateUserInfo(userInfo);
 			}
-			else
-			{
-				response.setResponseCode(ConstantMessages.successCode);
-				response.setResponseMessage(ConstantMessages.updatedUserInfo);
-			}
-		}
 		return response;
 	}
 	

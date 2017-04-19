@@ -1,8 +1,10 @@
 package com.wpl.bidding.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.client.RestTemplate;
 
-import com.wpl.bidding.dao.LoginDaoImpl;
+import com.wpl.bidding.common.Route;
+import com.wpl.bidding.model.Login;
+import com.wpl.bidding.model.UserModel;
 import com.wpl.bidding.persist.User;
 
 /**
@@ -11,22 +13,21 @@ import com.wpl.bidding.persist.User;
  */
 public class LoginServiceImpl implements LoginService {
 	
-	@Autowired
-	LoginDaoImpl loginDao;
-
 	@Override
-	public User login(String username, String password) {
-		User users = loginDao.login(username, password);
-		return users;
+	public UserModel login(Login userDetails) {
+		UserModel customer = new UserModel();
+		RestTemplate restTemplate = new RestTemplate();
+	    customer = restTemplate.postForObject(Route.basePath+Route.loginUrl,userDetails, UserModel.class);
+		return customer;
 	}
 
 	@Override
-	public User register(User user) {
+	public UserModel register(User user) {
 		// TODO Auto-generated method stub
-		User users = loginDao.register(user);
-		return users;
+		UserModel customer = new UserModel();
+		RestTemplate restTemplate = new RestTemplate();
+	    customer = restTemplate.postForObject(Route.basePath+Route.registerUrl,user, UserModel.class);
+		return customer;
 	}
-	 
 	
-
 }

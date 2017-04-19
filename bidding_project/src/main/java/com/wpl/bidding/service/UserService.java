@@ -3,6 +3,8 @@
  */
 package com.wpl.bidding.service;
 
+import com.wpl.bidding.model.Response;
+import com.wpl.bidding.model.UserModel;
 import com.wpl.bidding.persist.User;
 
 /**
@@ -11,6 +13,6 @@ import com.wpl.bidding.persist.User;
  */
 public interface UserService {
 	
-	public User getUserInfo(int userId);
-	public int updateUserInfo(User userInfo);
+	public UserModel getUserInfo(int userId);
+	public Response updateUserInfo(User userInfo);
 }

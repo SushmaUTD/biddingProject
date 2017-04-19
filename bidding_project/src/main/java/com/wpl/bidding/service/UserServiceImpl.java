@@ -3,9 +3,11 @@
  */
 package com.wpl.bidding.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.wpl.bidding.dao.UserDaoImpl;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
+import com.wpl.bidding.common.Route;
+import com.wpl.bidding.model.Response;
+import com.wpl.bidding.model.UserModel;
 import com.wpl.bidding.persist.User;
 
 /**
@@ -13,19 +15,19 @@ import com.wpl.bidding.persist.User;
  *
  */
 public class UserServiceImpl implements UserService{
-
-	@Autowired UserDaoImpl userDao;
-
-	public User getUserInfo(int userId) {
-		// TODO Auto-generated method stub
-		return userDao.getUserInfo(userId);
+	
+	public UserModel getUserInfo(int userId) {
+		UserModel customer = new UserModel();
+		RestTemplate restTemplate = new RestTemplate();
+		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(Route.basePath+Route.getProfileInfoUrl);
+	    customer = restTemplate.getForObject(builder.build().encode().toUri(), UserModel.class);
+	    return customer;
 	}
 	
-	public int updateUserInfo(User userInfo) {
-		// TODO Auto-generated method stub
-		return userDao.updateUserInfo(userInfo);
+	public Response updateUserInfo(User userInfo) {
+		Response response = new Response();
+		RestTemplate restTemplate = new RestTemplate();
+	    response = restTemplate.postForObject(Route.basePath+Route.editProfileInfoUrl,userInfo,Response.class);
+		return response;
 	}
-	
-	
-
 }

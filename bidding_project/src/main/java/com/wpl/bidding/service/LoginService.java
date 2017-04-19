@@ -1,10 +1,12 @@
 package com.wpl.bidding.service;
 
+import com.wpl.bidding.model.Login;
+import com.wpl.bidding.model.UserModel;
 import com.wpl.bidding.persist.User;
 
 public interface LoginService {
 
-	public User login(String username, String password);
-	public User register(User user);
+	public UserModel login(Login userDetails);
+	public UserModel register(User user);
 	
 }
