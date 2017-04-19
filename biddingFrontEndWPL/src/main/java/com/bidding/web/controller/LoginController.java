@@ -42,9 +42,9 @@ public class LoginController {
 		if(customer.getResponse().getResponseCode().equalsIgnoreCase(ConstantMessages.successCode))
 		{
 			HttpSession session = request.getSession();
-			session.setAttribute("user", customer.getUserDetails().getUserName());
+			session.setAttribute("user", customer.getUserDetails());
 			model.addAttribute("name", customer.getUserDetails().getFirstName()+" "+customer.getUserDetails().getLastName());
-			return "homePage";
+			return "homepage";
 		}
 		else
 		{
