@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login error page</title>
+<title>Register error page</title>
 </head>
 <body>
 <p>${errorMessage}</p>
