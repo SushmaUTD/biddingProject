@@ -1,9 +1,11 @@
 package com.bidding.web.controller;
 
+import java.io.IOException;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,7 @@ import com.bidding.web.common.Route;
 import com.bidding.web.model.Login;
 import com.bidding.web.model.User;
 import com.bidding.web.model.UserModel;
+import com.bidding.web.utils.GeoLocationUtils;
 
 @Controller
 public class LoginController {
@@ -25,18 +28,19 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(HttpServletRequest request,ModelMap model) {
+	public String login(HttpServletRequest request,ModelMap model) throws IOException {
 		UserModel customer = new UserModel();
 		Login userDetails = new Login();
 		userDetails.setUsername(request.getParameter("userName"));
 		userDetails.setPassword(request.getParameter("password"));
-		
+		userDetails.setLocation(GeoLocationUtils.getLocation("33.0006239", "-96.7771018"));
 		if(userDetails.getUsername() == null || userDetails.getPassword() == null)
 		{
 			model.addAttribute("errorMessage", ConstantMessages.wrongUserNameOrPassword);
 			return "login-error";
 		}
 		try {	
+			
 			RestTemplate restTemplate = new RestTemplate();
 			customer = restTemplate.postForObject(Route.basePath+Route.loginUrl,userDetails, UserModel.class);
 		if(customer.getResponse().getResponseCode().equalsIgnoreCase(ConstantMessages.successCode))
