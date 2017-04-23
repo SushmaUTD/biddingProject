@@ -59,7 +59,7 @@
             
             <br>
             <p class="forgot"><a href="#">Forgot Password?</a>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-            <a href="//localhost:8080/bidding/register.jsp">New User?</a>
+            <a href="/jsp/register.jsp">New User?</a>
             </p>
           </div>
           </form>
