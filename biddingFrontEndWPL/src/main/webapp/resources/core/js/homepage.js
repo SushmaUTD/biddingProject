@@ -1,3 +1,19 @@
+$(document).ready(function(){
+$("#div-left").mouseenter(function(){
+$("#div-left").animate({
+height:'+=20px',
+width:'+=20px'
+});
+});
+
+$("#div-left").mouseleave(function(){
+$("#div-left").animate({
+height:'-=20px',
+width:'-=20px'
+});
+
+});
+});
 $(document).ready(function() {
     $('.navbar-nav [data-toggle="tooltip"]').tooltip();
     $('.navbar-twitch-toggle').on('click', function(event) {

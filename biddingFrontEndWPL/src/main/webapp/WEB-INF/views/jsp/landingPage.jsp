@@ -56,7 +56,8 @@
             <input type="text" name="userName" placeholder="Enter Username" required="" > &nbsp
             <input type="password"  name="password" placeholder="Password" required=""autocomplete="off"> &nbsp &nbsp 
             <input type="submit" value="Log In"></input>
-            
+            <input id="location" type="hidden" name="location" >
+            <p id="demo"> </p>
             <br>
             <p class="forgot"><a href="#">Forgot Password?</a>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
             <a href="//localhost:8080/bidding/register.jsp">New User?</a>
@@ -98,7 +99,7 @@
     
 </div>
 </header>
-<p id="demo"> </p>
+
     
 
     <!-- jQuery -->
@@ -116,7 +117,22 @@
 
     <!-- Theme JavaScript -->
     <script src="resources/core/js/agency.min.js"></script>
-    
+    <script type="text/javascript">
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        document.getElementById("location").value = "Latitude: " + position.coords.latitude + 
+        "<br>Longitude: " + position.coords.longitude;
+    }
+    </script>
 </body>
 
 </html>

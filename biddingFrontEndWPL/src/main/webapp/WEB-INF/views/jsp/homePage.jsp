@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <head>
 	<title>homepage</title>
-	<link href="resources/core/css/bootstrap.min.css" rel="stylesheet">
-	<link href="resources/core/css/homepage.css" rel="stylesheet">
-	<script src="homepage.js"> </script>
+	<link href="resources\core\css\bootstrap.min.css" rel="stylesheet">
+	<link href="resources\core\css\homepage.css" rel="stylesheet">
+	<script src="resources\core\js\homepage.js"> </script>
 <style>
  
 </style>
@@ -18,9 +18,7 @@
       <h2 style="color:white;">University of Texas at Dallas, College of Music</h2>
     </div>-->
     <ul class="nav navbar-nav">
-	  <li><span style="font-size:30px;cursor:pointer;color:white" onclick="openNav
-
-()">&#9776;</span></li>
+	  <li><span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span></li>
       <li class="active"><a href="index.html">Home</a></li>
       <li><input type="search" name="search">
       <input type="submit" name="submit" value="Go"></li>
@@ -45,14 +43,36 @@ Profile">
   <p style="font-size: 15px">Location: ${user.getLocation()}</p>
   </div>
 </div>
-<div>
-<h2 style="text-align:center"><img src="resources\core\img\logos\add.jpg" href=""> Create 
-new bid</h2>
-<h2 style="text-align:center"><img src="resources\core\img\logos\bid.jpg" href=""> Bid items</h2>
+
+<div id="div-left" class="div-left">
+<h2><img id="img" src="add.jpg" href=""> Create new bid</h2>
+<h2><img id="img" src="auction.jpg" href=""> My Bids</h2>
+<h2><img style="width:20%; height:20%" id="img" src="unnamed.jpg" href=""> Posted items</h2>
+
+</div>
+<div id="div-right">
+<h2><img id="img" src="bid.jpg" href=""> Bid items</h2>
+<h2><img id="img" src="purchased.jpg" href=""> Purchased items</h2>
 </div>
 
-
 <script>
+$(document).ready(function(){
+$("div.div-left").mouseenter(function(){
+$("div.div-left").animate({
+left:'20px',
+height:'+=20px',
+width:'+=20px'
+});
+});
+$("div.div-left").mouseleave(function(){
+$("div.div-left").animate({
+height:'-=20px',
+width:'-=20px'
+});
+
+});
+});
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";

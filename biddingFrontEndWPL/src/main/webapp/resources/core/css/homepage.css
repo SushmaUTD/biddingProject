@@ -48,7 +48,23 @@ body {
     transition: margin-left .2s;
     float:left;
 }
-
+#div-left{
+	margin: auto;
+	 width: 30%;
+   
+	margin-left:25%;
+	float: left;
+}
+#div-right{
+	margin: auto;
+	 width: 30%;
+    border: 3px solid white;
+	margin-left: 55%;
+}
+#div-left h2, #div-right h2{
+   
+	padding: 10px 10px;
+}
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
