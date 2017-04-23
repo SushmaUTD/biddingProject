@@ -51,16 +51,15 @@
                 <br>
                <a class="navbar-brand page-scroll" href="#page-top" style="margin-left:30px">Start Bootstrap</a>
             </div>
-            <form id="one" action="http://192.168.0.24:8080/frontend/login" method="POST">
+            <form id="one" action="http://192.168.0.16:8080/frontend/login" method="POST">
             &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <div style="float:right;margin-right=0px">
             <input type="text" name="userName" placeholder="Enter Username" required="" > &nbsp
             <input type="password"  name="password" placeholder="Password" required=""autocomplete="off"> &nbsp &nbsp 
             <input type="submit" value="Log In"></input>
-            <input id="location" type="hidden" name="location" >
-            <p id="demo"> </p>
+            
             <br>
             <p class="forgot"><a href="#">Forgot Password?</a>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-            <a href="//localhost:8080/bidding/register.jsp">New User?</a>
+            <a href="/jsp/register.jsp">New User?</a>
             </p>
           </div>
           </form>
@@ -99,7 +98,7 @@
     
 </div>
 </header>
-
+<p id="demo"> </p>
     
 
     <!-- jQuery -->
@@ -117,22 +116,7 @@
 
     <!-- Theme JavaScript -->
     <script src="resources/core/js/agency.min.js"></script>
-    <script type="text/javascript">
-    var x = document.getElementById("demo");
-
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else { 
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-    }
-
-    function showPosition(position) {
-        document.getElementById("location").value = "Latitude: " + position.coords.latitude + 
-        "<br>Longitude: " + position.coords.longitude;
-    }
-    </script>
+    
 </body>
 
 </html>

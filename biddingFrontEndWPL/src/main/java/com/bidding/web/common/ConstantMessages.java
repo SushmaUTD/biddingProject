@@ -17,5 +17,6 @@ public class ConstantMessages {
 	public static final String serverError = "Technical Issue!! Please try later";
 	public static final String mandatoryParamsMissing = "Mandatory Parameters Missing";
 	public static final String updateProfileMessage = "Profile has been updated Successfully";
+	public static final String googleAPIKEY = "AIzaSyBoU_9-AlpX4jSS-Y35oZSjlplvohjDbns";
 }
 
