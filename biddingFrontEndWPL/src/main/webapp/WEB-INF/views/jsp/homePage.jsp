@@ -9,6 +9,7 @@
 </style>
 </head>
 <body>
+<header>
 <div id="main">
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 </div>
@@ -33,6 +34,7 @@ Profile">
    
   </div>
 </nav>
+
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <p>${user.getFirstName()} ${user.getLastName()} </p>
@@ -43,7 +45,7 @@ Profile">
   <p style="font-size: 15px">Location: ${user.getLocation()}</p>
   </div>
 </div>
-
+</header>
 <div id="div-left" class="div-left">
 <h2><img id="img" src="add.jpg" href=""> Create new bid</h2>
 <h2><img id="img" src="auction.jpg" href=""> My Bids</h2>
@@ -59,7 +61,8 @@ Profile">
 $(document).ready(function(){
 $("div.div-left").mouseenter(function(){
 $("div.div-left").animate({
-left:'20px',
+  alert("hi");
+	left:'20px',
 height:'+=20px',
 width:'+=20px'
 });

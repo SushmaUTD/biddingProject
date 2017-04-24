@@ -17,37 +17,17 @@ import com.bidding.web.common.Route;
 import com.bidding.web.model.Login;
 import com.bidding.web.model.User;
 import com.bidding.web.model.UserModel;
-import com.bidding.web.model.createBid;
 import com.bidding.web.utils.GeoLocationUtils;
-import java.util.*;
-@Controller
-public class LoginController {
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+@Controller
+public class createNewBidController {
+
+	@RequestMapping(value = "/createNewBid", method = RequestMethod.GET)
 	public String landingPage(ModelMap model) {
-		return "landingPage";
-	}
-	@RequestMapping(value = "/test", method = RequestMethod.GET)
-	public String erre(ModelMap model) {
-		List<createBid> itemsList = new ArrayList<createBid>(); 
-		createBid item = new createBid();
-		item.setProductName("pen");
-		item.setProductDescription("black");
-		item.setImageUrl("https://www.google.com/search?q=pen&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjQ-oaXq7zTAhUpwYMKHU6jA3QQ_AUICCgB&biw=1334&bih=560#imgrc=_");
-		item.setPrice(10);
-		itemsList.add(item);
-		createBid item1 = new createBid();
-		item1.setProductName("pencil");
-		item1.setProductDescription("blue");
-		item1.setImageUrl("https://www.google.com/search?q=pen&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjQ-oaXq7zTAhUpwYMKHU6jA3QQ_AUICCgB&biw=1334&bih=560#imgrc=_");
-		item1.setPrice(5);
-		itemsList.add(item1);
-		model.addAttribute("itemsList",itemsList);
 		return "createNewBid";
 	}
 	
-	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public String login(HttpServletRequest request,ModelMap model) throws IOException {
 		UserModel customer = new UserModel();
 		Login userDetails = new Login();
