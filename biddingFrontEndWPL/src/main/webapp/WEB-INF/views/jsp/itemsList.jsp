@@ -24,6 +24,11 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
 }
+$(document).ready(function(){
+    $("#sub").click(function(){
+        $(".card").after( '<form id="form"><input type="text" placeholder="Enter Bid Value" id="txt" margin-left="400px"> <input type="submit" value="Enter"></form>');
+    });
+});
 </script>
   <style>
   body {
